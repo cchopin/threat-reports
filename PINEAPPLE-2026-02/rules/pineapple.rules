@@ -1,0 +1,45 @@
+# PINEAPPLE - Pyramid C2 / JeffreyEpstein Suricata Rules
+# Author: cchopin
+# Date: 2026-02-13
+# Reference: ../rapport.md
+#
+# NOTE: IPs are defanged with [.] notation for safe sharing.
+# Re-fang before deploying (replace [.] with . )
+
+# Detection Pyramid C2 #1
+alert http any any -> 158.94.210.160 443 (
+  msg:"MALWARE Pyramid C2 PINEAPPLE - C2 #1 Auth";
+  content:"Authorization: Basic dTAyYTcwNTc4OTI6";
+  content:"/727c5f/";
+  sid:2026001; rev:1;
+)
+
+# Detection Pyramid C2 #2
+alert http any any -> 178.16.53.173 443 (
+  msg:"MALWARE Pyramid C2 PINEAPPLE - C2 #2 Auth";
+  content:"Authorization: Basic U2ZzQDNhc2RBZHF3ZU";
+  content:"/login/";
+  sid:2026002; rev:1;
+)
+
+# Detection generique Pyramid C2 (signature serveur)
+alert http any 443 -> any any (
+  msg:"MALWARE Pyramid C2 Server Response";
+  content:"BaseHTTP/0.6 Python/3.12";
+  content:"Demo Realm";
+  sid:2026003; rev:1;
+)
+
+# Detection HTTP non-TLS sur port 443
+alert tcp any any -> any 443 (
+  msg:"SUSPICIOUS HTTP (non-TLS) on port 443";
+  content:"GET /"; depth:5;
+  content:"Authorization: Basic";
+  sid:2026004; rev:1;
+)
+
+# Detection Chisel SOCKS5 tunnel
+alert tcp any any -> 192.168.178.60 8000 (
+  msg:"MALWARE Chisel Reverse SOCKS5 Tunnel - PINEAPPLE";
+  sid:2026005; rev:1;
+)

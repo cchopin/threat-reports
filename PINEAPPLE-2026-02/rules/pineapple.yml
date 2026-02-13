@@ -1,0 +1,30 @@
+title: PINEAPPLE - JeffreyEpstein Pyramid C2 Activity
+id: pineapple-pyramid-c2-2026
+status: experimental
+description: Detecte l'activite du malware JeffreyEpstein / Pyramid C2
+author: cchopin
+date: 2026-02-13
+references:
+    - https://github.com/cchopin/threat-reports/tree/main/PINEAPPLE-2026-02
+logsource:
+    category: network_connection
+    product: windows
+detection:
+    selection_ip:
+        DestinationIp:
+            - '158.94.210.160'
+            - '178.16.53.173'
+            - '178.16.55.153'
+    selection_port:
+        DestinationPort: 443
+    selection_process:
+        Image|endswith:
+            - '\python.exe'
+            - '\python3.exe'
+            - '\JeffreyEpstein.exe'
+    condition: selection_ip or (selection_port and selection_process)
+    level: critical
+    tags:
+        - attack.command_and_control
+        - attack.t1071.001
+        - attack.t1572

@@ -1,0 +1,16 @@
+type,value,description,tags
+ip,158.94.210.160,C2 #1 Pyramid (principal) - ACTIF,c2;pyramid;pineapple
+ip,178.16.53.173,C2 #2 Pyramid (fallback) - ACTIF,c2;pyramid;pineapple
+ip,178.16.55.153,Serveur de staging (NAS Synology),staging;synology;pineapple
+ip,192.168.178.60,Chisel listener (reseau interne attaquant),chisel;socks5;pineapple
+network,158.94.210.0/24,OMEGATECH AS202412,bulletproof;omegatech
+network,178.16.53.0/24,OMEGATECH AS202412,bulletproof;omegatech
+asn,AS202412,OMEGATECH-AS - Omegatech LTD,bulletproof;omegatech
+sha256,36a6af23c42a0cc7d42a483c494199ab0ac966b68e96356c29f9386fde18beb7,JeffreyEpstein.py (dropper script),dropper;python;pineapple
+sha256,d72294fb338bc2fc8896d25a7395a4db466425427e1559e77185d5135a830681,JeffreyEpstein.exe (dropper launcher),dropper;pe;pineapple
+sha256,26e56ee27e6b7a808cffe0c2cf58849c87cc1af44b4625bac68bf43a8b1ae348,pythonmemorymodule.py (injection memoire),c2-module;pyramid;pineapple
+sha256,5876f01535bc1ed1f0adc5c33d6ee222b423dadc75ae72a71ce8a2deac068ffc,bh.py (BeaconHunter - evasion EDR),c2-module;edr-evasion;pineapple
+sha256,53f1fb36ae3e57efe2d44180a2e4b3f0e94f1037232dabfe064cbb7a73149d23,DonPAPI.py (vol credentials DPAPI),c2-module;credential-theft;pineapple
+sha256,f011825da791a81f9adf4921a5fcc3262f8170f8014e6515c6fedbe9bc8620af,secretsdump.py (dump SAM/LSA/NTDS),c2-module;credential-theft;pineapple
+sha256,5d10b66e95cec6e2e5b5709ce546df7c2bb27c26e1c732ada98a4bc118179ae3,chisel.exe (tunneling SOCKS5),tunneling;chisel;pineapple
+sha256,d66280801e73917850baa39fbfba728ea7a9dd95f19b6e2389fcb667a5a59470,impacket.zip (dependance secretsdump),dependency;impacket;pineapple

@@ -4,9 +4,10 @@ Threat intelligence reports, IOCs, and detection rules (YARA/Sigma/Suricata) fro
 
 ## Reports
 
-| Date | Threat Actor | Malware | Report |
-|------|-------------|---------|--------|
-| 2026-02-13 | PINEAPPLE | JeffreyEpstein / Pyramid C2 | [Report](PINEAPPLE-2026-02/rapport.md) |
+| Date | Threat Actor | Malware | Lang | Report |
+|------|-------------|---------|------|--------|
+| 2026-02-13 | PINEAPPLE | JeffreyEpstein / Pyramid C2 | FR | [Report](PINEAPPLE-2026-02/rapport.md) |
+| 2026-02-06 | Mirai.EIW / XMRig | Mirai botnet + cryptominer | EN/FR | [Report](MIRAI-EIW-2026-02/) |
 
 ## Structure
 

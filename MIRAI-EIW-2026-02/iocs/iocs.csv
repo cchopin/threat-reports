@@ -1,0 +1,23 @@
+type,value,description,tags
+ip,91.92.241.12,Primary C2 server (port 6969),c2;mirai;eiw;virtualine
+ip,91.92.243.113,Dropper distribution server (port 235),c2;mirai;eiw;virtualine
+ip,91.92.241.10,Payload download server (port 80),c2;mirai;eiw;virtualine
+ip,193.142.147.209,Attack coordinator (8979 req),attacker;nextjs-exploit
+ip,195.3.222.78,First successful exploitation (HTTP 500 Jan 28),attacker;nextjs-exploit
+ip,195.3.222.218,Botnet node (2463 req),attacker;botnet-node
+ip,144.172.114.199,Botnet node (2100 req),attacker;botnet-node
+ip,15.204.132.49,Botnet node OVH (1512 req),attacker;botnet-node;ovh
+ip,45.194.92.35,Botnet node (1098 req),attacker;botnet-node
+ip,87.121.84.24,Active exploitation Feb 6 (46 HTTP 500),attacker;nextjs-exploit
+ip,104.219.238.86,SSRF/LFI scanner (727 req),scanner;ssrf;lfi
+ip,103.151.172.73,Strapi upload exploit attempt,attacker;strapi-exploit
+network,138.121.0.0/16,DDoS SYN flood source block (LACNIC),ddos;syn-flood
+network,91.92.241.0/24,Virtualine/Railnet C2 block,c2;bulletproof;virtualine
+network,91.92.243.0/24,Virtualine/Railnet dropper block,c2;bulletproof;virtualine
+asn,AS214943,Railnet LLC - Virtualine Technologies front,bulletproof;virtualine
+sha256,833bca151dc3ff83cbed22b6e7e849f0ee752bac55f68e156660e4d33d17caad,x86_32.kok - Mirai.EIW botnet binary,malware;mirai;eiw
+sha256,bf5a1e8b25d6ef368f11028fc492cc5e4a7e623a5b603a505828ae1c2e62fa3d,logic.sh / logicdr.sh - Mirai dropper script,dropper;mirai;eiw
+domain,pool.hashvault.pro,XMRig mining pool,mining;monero;xmrig
+domain,auto.c3pool.org,XMRig mining pool (c3pool),mining;monero;xmrig
+monero_wallet,89ASvi6ZBHXE6ykUZZFtqE1QqVhmwxCDCUvW2jvGZy1yP6n34uNdMKYj54ck81UC87KAKLaZT2L4YfC85ZCePDVeQPWoeAq,Monero wallet (hashvault),mining;monero
+monero_wallet,44VvVLU2Vmja6gTMbhNHAzc7heYTiT7VmQEXkjdaYo6K41WqH8qWw1CL8wKAAgz5xLYT3XL3pb9KCUZS7PPZbzUGCCpZ9Ee,Monero wallet (c3pool),mining;monero
